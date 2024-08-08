@@ -1,3 +1,3 @@
 # Will-Soft-Tech.-Corp.
 
-Visible para todos
+![Metrics](/github-metrics.svg)
