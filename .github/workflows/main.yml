@@ -32,7 +32,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
 
           # Options
-          user: Will-Soft Tech. Corp.
+          user: Will-Soft
           template: terminal
           base: header, activity, community, repositories, metadata
           config_timezone: Europe/Madrid
