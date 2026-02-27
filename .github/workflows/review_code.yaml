@@ -1,0 +1,27 @@
+name: "Security Enforcement (Private)"
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  security-check:
+    name: "Security Scan"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write # Permite poner comentarios en la PR
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: "Semgrep Scan & Comment"
+        uses: reviewdog/action-semgrep@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review # ESTO pone los comentarios línea a línea
+          level: error # Solo bloquea si hay errores reales
+          semgrep_rules: >- # Reglas estándar de seguridad
+            p/security-audit
+            p/secrets
