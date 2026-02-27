@@ -1,4 +1,4 @@
-name: "Security Enforcement (Private)"
+name: "Security Enforcement"
 
 on:
   pull_request:
